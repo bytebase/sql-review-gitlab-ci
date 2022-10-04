@@ -6,8 +6,7 @@ To use this in GitLab CI, you need to include the YAML file in your `.gitlab-ci.
 
 ```yml
 include:
-  # replace version with a specific version
-  - remote: https://raw.githubusercontent.com/ed-bytebase/sql-review-gitlab-ci/<version>/sql-review.yml
+  - remote: https://raw.githubusercontent.com/ed-bytebase/sql-review-gitlab-ci/main/sql-review.yml
 
 sql-review:
   variables:
