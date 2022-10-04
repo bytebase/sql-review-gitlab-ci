@@ -19,8 +19,8 @@ sql-review:
     # get changed files in GitLab merge request: https://forum.gitlab.com/t/ci-cd-pipeline-get-list-of-changed-files/26847/3
     - FILES=$(git diff-tree --no-commit-id --diff-filter=AM --name-only -r origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME -r $CI_COMMIT_SHA -- '*.sql')
     - echo $FILES
-    # TODO: change the url
-    - curl -o ./sql-review.sh "https://raw.githubusercontent.com/ed-bytebase/sql-review-gitlab-ci/$VERSION/sql-review.sh"
+    # download the script
+    - curl -o ./sql-review.sh "https://raw.githubusercontent.com/bytebase/sql-review-gitlab-ci/$VERSION/sql-review.sh"
     # https://gitlab.com/gitlab-org/gitlab-runner/-/issues/2672
     - bash ./sql-review.sh --files="$FILES" --api="$SQL_REVIEW_API"
   artifacts:
